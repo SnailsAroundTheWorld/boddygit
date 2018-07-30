@@ -45,6 +45,7 @@ export default {
   },
   methods: {
       code(){
+        // this.$axios.get(process.env.API_HOST+'getSMS',{
         this.$axios.post(process.env.API_HOST+'getSMS',{
           mobile:this.mobile
         })
