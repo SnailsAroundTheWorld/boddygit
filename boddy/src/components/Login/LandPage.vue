@@ -45,11 +45,13 @@ export default {
   },
   methods: {
       code(){
-        this.$axios.get(process.env.API_HOST+'getSMS',{
+        this.$axios.post(process.env.API_HOST+'getSMS',{
           mobile:this.mobile
         })
         .then(function(vercode){
-          console.log(vercode.data.code)  
+          console.log(vercode.data);
+          // console.log(vercode.data.data.msg);
+          // console.log(vercode.data[0].msg)  
         })
         .catch(function(vercode){
           console.log(vercode.data.msg)
